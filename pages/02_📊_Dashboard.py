@@ -128,21 +128,20 @@ fig_pie_min_loss.update_layout(
 prop_jenis_invest = df['Sebutkan jenis investasi yang Anda lakukan!'].value_counts()
 prop_jenis_invest = pd.DataFrame(prop_jenis_invest).sort_values(by='Sebutkan jenis investasi yang Anda lakukan!',
                                                         ascending=False)
-st.dataframe(prop_jenis_invest)
 
-# fig_prop_jenis_invest = px.bar(prop_jenis_invest,
-#                                x=prop_jenis_invest.index,
-#                                y="Sebutkan jenis investasi yang Anda lakukan!",
-#                                title="<b>Perbandingan Jumlah Jenis Investasi</b>",
-#                                labels={"index": "Jenis Investasi",
-#                                        "Sebutkan jenis investasi yang Anda lakukan!":"Jumlah"},
-#                                color_discrete_sequence=["#0083B8"] * len(prop_jenis_invest),
-#                                template="plotly_white",
-# )
-# fig_prop_jenis_invest.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)",
-#     xaxis=(dict(showgrid=False))
-# )
+fig_prop_jenis_invest = px.bar(prop_jenis_invest,
+                               x=prop_jenis_invest.index,
+                               y=prop_jenis_invest['count'],
+                               title="<b>Perbandingan Jumlah Jenis Investasi</b>",
+                               labels={"index": "Jenis Investasi",
+                                       "count":"Jumlah"},
+                               color_discrete_sequence=["#0083B8"] * len(prop_jenis_invest),
+                               template="plotly_white",
+)
+fig_prop_jenis_invest.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False))
+)
 
 # # GRAFIK BAR PLOT - PROPORSI JUMLAH PROFIL RISIKO INVESTASI
 # prop_jenis_profil = df['Apa tingkat Profil Resiko investasi anda?'].value_counts()
