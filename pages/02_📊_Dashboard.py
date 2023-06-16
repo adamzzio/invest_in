@@ -103,8 +103,8 @@ prop_max_profit = df['Apakah anda memaksimalkan keuntungan dalam berinvestasi?']
 prop_max_profit = pd.DataFrame(prop_max_profit)
 st.dataframe(prop_max_profit)
 
-fig_pie_max_profit = px.pie(prop_max_profit['count'],
-                            values="Apakah anda memaksimalkan keuntungan dalam berinvestasi?",
+fig_pie_max_profit = px.pie(prop_max_profit,
+                            values="count",
                             names=prop_max_profit.index,
                             title="<b>Apakah anda memaksimalkan keuntungan<br>dalam berinvestasi?</b>")
 
