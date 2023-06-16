@@ -152,7 +152,7 @@ fig_prop_jenis_profil = px.bar(prop_jenis_profil,
                                x=prop_jenis_profil.index,
                                y=prop_jenis_profil['count'],
                                title="<b>Perbandingan Jumlah Profil Risiko Investasi</b>",
-                               labels={"index": "Profil Risiko Investasi",
+                               labels={"Apa tingkat Profil Resiko investasi anda?": "Profil Risiko Investasi",
                                        "count":"Jumlah"},
                                color_discrete_sequence=["#0083B8"] * len(prop_jenis_profil),
                                template="plotly_white",
@@ -171,7 +171,7 @@ fig_prop_harga_turun = px.bar(prop_harga_turun,
                               x=prop_harga_turun.index,
                               y=prop_harga_turun['count'],
                               title="<b>Perbandingan Perilaku Investor<br>Saat Harga Turun</b>",
-                              labels={"index": "Jenis Perilaku",
+                              labels={"Apa yang Anda lakukan ketika harga turun?": "Jenis Perilaku",
                                       "count":"Jumlah"},
                               color_discrete_sequence=["#0083B8"] * len(prop_harga_turun),
                               template="plotly_white",
@@ -181,19 +181,19 @@ fig_prop_harga_turun.update_layout(
     xaxis=(dict(showgrid=False))
 )
 
-# # GRAFIK SCATTER PLOT - HUBUNGAN PENDAPATAN DENGAN ASET
-# fig_scatter_pendapatan_aset = px.scatter(df,
-#                                          x="Berapa jumlah pendapatan dalam sebulan?",
-#                                          y="Berapa aset yang anda miliki sekarang?",
-#                                          color="Apa tingkat Profil Resiko investasi anda?",
-#                                          title="<b>Hubungan Pendapatan dengan Aset</b>",
-#                                          labels={
-#                                              "Berapa jumlah pendapatan dalam sebulan?": "Pendapatan",
-#                                              "Berapa aset yang anda miliki sekarang?": "Aset",
-#                                              "Apa tingkat Profil Resiko investasi anda?": "Profil Risiko Investasi"
-#                                          },
-#                                          template="plotly_dark"
-#                                          )
+# GRAFIK SCATTER PLOT - HUBUNGAN PENDAPATAN DENGAN ASET
+fig_scatter_pendapatan_aset = px.scatter(df,
+                                         x="Berapa jumlah pendapatan dalam sebulan?",
+                                         y="Berapa aset yang anda miliki sekarang?",
+                                         color="Apa tingkat Profil Resiko investasi anda?",
+                                         title="<b>Hubungan Pendapatan dengan Aset</b>",
+                                         labels={
+                                             "Berapa jumlah pendapatan dalam sebulan?": "Pendapatan",
+                                             "Berapa aset yang anda miliki sekarang?": "Aset",
+                                             "Apa tingkat Profil Resiko investasi anda?": "Profil Risiko Investasi"
+                                         },
+                                         template="plotly_dark"
+                                         )
 
 # # DASHBOARD
 left_column_chart_row1, right_column_chart_row1 = st.columns(2)
@@ -209,7 +209,7 @@ left_column_chart_row3.plotly_chart(fig_prop_jenis_invest, use_container_width=T
 mid_column_chart_row3.plotly_chart(fig_prop_harga_turun, use_container_width=True)
 right_column_chart_row3.plotly_chart(fig_prop_jenis_profil, use_container_width=True)
 
-# st.plotly_chart(fig_scatter_pendapatan_aset, use_container_width=True)
+st.plotly_chart(fig_scatter_pendapatan_aset, use_container_width=True)
 
 left_column_chart_row4, mid_column_chart_row4, right_column_chart_row4 = st.columns([1,6,1])
 mid_column_chart_row4.image("wordcloud.png", use_column_width=True, caption="WordCloud Opini Investasi")
