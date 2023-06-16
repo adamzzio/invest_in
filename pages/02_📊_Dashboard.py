@@ -105,7 +105,9 @@ prop_max_profit = pd.DataFrame(prop_max_profit)
 fig_pie_max_profit = px.pie(prop_max_profit,
                             values="count",
                             names=prop_max_profit.index,
-                            title="<b>Apakah anda memaksimalkan keuntungan<br>dalam berinvestasi?</b>")
+                            title="<b>Apakah anda memaksimalkan keuntungan<br>dalam berinvestasi?</b>",
+                            labels={"Apakah Anda memaksimalkan keuntungan dalam berinvestasi?":"Perilaku Maksimal Keuntungan",
+                                "count":"Jumlah"})
 
 fig_pie_max_profit.update_layout(
     plot_bgcolor="rgba(0,0,0,0)"
@@ -118,7 +120,9 @@ prop_min_loss = pd.DataFrame(prop_min_loss)
 fig_pie_min_loss = px.pie(prop_min_loss,
                             values="count",
                             names=prop_min_loss.index,
-                            title="<b>Apakah Anda meminimalkan kerugian<br>dalam berinvestasi?</b>")
+                            title="<b>Apakah Anda meminimalkan kerugian<br>dalam berinvestasi?</b>",
+                            labels={"Apakah Anda meminimalkan kerugian dalam berinvestasi?":"Perilaku Minimal Kerugian",
+                                "count":"Jumlah"}))
 
 fig_pie_min_loss.update_layout(
     plot_bgcolor="rgba(0,0,0,0)"
