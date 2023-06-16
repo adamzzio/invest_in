@@ -150,7 +150,7 @@ prop_jenis_profil = pd.DataFrame(prop_jenis_profil).sort_values(by='Apa tingkat 
 
 fig_prop_jenis_profil = px.bar(prop_jenis_profil,
                                x=prop_jenis_profil.index,
-                               y=prop_jenis_profil['count',
+                               y=prop_jenis_profil['count'],
                                title="<b>Perbandingan Jumlah Profil Risiko Investasi</b>",
                                labels={"index": "Profil Risiko Investasi",
                                        "count":"Jumlah"},
