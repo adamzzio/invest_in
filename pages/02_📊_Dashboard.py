@@ -106,7 +106,7 @@ fig_pie_max_profit = px.pie(prop_max_profit,
                             values="count",
                             names=prop_max_profit.index,
                             title="<b>Apakah anda memaksimalkan keuntungan<br>dalam berinvestasi?</b>",
-                            labels={"Apakah Anda memaksimalkan keuntungan dalam berinvestasi?":"Perilaku Maksimal Keuntungan",
+                            labels={"Apakah anda memaksimalkan keuntungan dalam berinvestasi?":"Perilaku Maksimal Keuntungan",
                                 "count":"Jumlah"})
 
 fig_pie_max_profit.update_layout(
