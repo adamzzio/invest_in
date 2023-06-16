@@ -80,23 +80,23 @@ fig_avg_profil_pendapatan.update_layout(
 )
 
 # # GRAFIK BAR PLOT - RATA-RATA ASET BERDASAR PROFIL RISIKO INVESTASI
-# avg_pendapatan_aset= df.groupby('Apa tingkat Profil Resiko investasi anda?')['Berapa aset yang anda miliki sekarang?'].mean()
-# avg_pendapatan_aset = pd.DataFrame(avg_pendapatan_aset).sort_values(by='Berapa aset yang anda miliki sekarang?',
-#                                                                         ascending=False)
+avg_pendapatan_aset= df.groupby('Apa tingkat Profil Resiko investasi anda?')['Berapa aset yang anda miliki sekarang?'].mean()
+avg_pendapatan_aset = pd.DataFrame(avg_pendapatan_aset).sort_values(by='Berapa aset yang anda miliki sekarang?',
+                                                                        ascending=False)
 
-# fig_avg_profil_aset = px.bar(avg_pendapatan_aset,
-#                              x=avg_pendapatan_aset.index,
-#                              y="Berapa aset yang anda miliki sekarang?",
-#                              title="<b>Rata-rata Aset berdasarkan<br>Profil Risiko Investasi</b>",
-#                              labels={"Apa tingkat Profil Resiko investasi anda?": "Profil Risiko",
-#                                      "Berapa aset yang anda miliki sekarang?":"Rata-rata Aset"},
-#                              color_discrete_sequence=["#0083B8"] * len(avg_pendapatan_aset),
-#                              template="plotly_white",
-# )
-# fig_avg_profil_aset.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)",
-#     xaxis=(dict(showgrid=False))
-# )
+fig_avg_profil_aset = px.bar(avg_pendapatan_aset,
+                             x=avg_pendapatan_aset.index,
+                             y="Berapa aset yang anda miliki sekarang?",
+                             title="<b>Rata-rata Aset berdasarkan<br>Profil Risiko Investasi</b>",
+                             labels={"Apa tingkat Profil Resiko investasi anda?": "Profil Risiko",
+                                     "Berapa aset yang anda miliki sekarang?":"Rata-rata Aset"},
+                             color_discrete_sequence=["#0083B8"] * len(avg_pendapatan_aset),
+                             template="plotly_white",
+)
+fig_avg_profil_aset.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False))
+)
 
 # GRAFIK PIE CHART - PROPORSI MAKSIMAL KEUNTUNGAN
 # prop_max_profit = df['Apakah anda memaksimalkan keuntungan dalam berinvestasi?'].value_counts()
