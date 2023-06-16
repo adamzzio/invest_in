@@ -99,17 +99,17 @@ fig_avg_profil_aset.update_layout(
 )
 
 # GRAFIK PIE CHART - PROPORSI MAKSIMAL KEUNTUNGAN
-# prop_max_profit = df['Apakah anda memaksimalkan keuntungan dalam berinvestasi?'].value_counts()
-# prop_max_profit = pd.DataFrame(prop_max_profit)
+prop_max_profit = df['Apakah anda memaksimalkan keuntungan dalam berinvestasi?'].value_counts()
+prop_max_profit = pd.DataFrame(prop_max_profit)
 
-# fig_pie_max_profit = px.pie(prop_max_profit,
-#                             values="Apakah anda memaksimalkan keuntungan dalam berinvestasi?",
-#                             names=prop_max_profit.index,
-#                             title="<b>Apakah anda memaksimalkan keuntungan<br>dalam berinvestasi?</b>")
+fig_pie_max_profit = px.pie(prop_max_profit,
+                            values="Apakah anda memaksimalkan keuntungan dalam berinvestasi?",
+                            names=prop_max_profit.index,
+                            title="<b>Apakah anda memaksimalkan keuntungan<br>dalam berinvestasi?</b>")
 
-# fig_pie_max_profit.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)"
-# )
+fig_pie_max_profit.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)"
+)
 
 # GRAFIK PIE CHART - PROPORSI MINIMAL KERUGIAN
 # prop_min_loss = df['Apakah Anda meminimalkan kerugian dalam berinvestasi?'].value_counts()
