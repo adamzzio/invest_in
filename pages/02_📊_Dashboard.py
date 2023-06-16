@@ -196,9 +196,9 @@ fig_avg_profil_aset.update_layout(
 #                                          )
 
 # # DASHBOARD
-# left_column_chart_row1, right_column_chart_row1 = st.columns(2)
-# left_column_chart_row1.plotly_chart(fig_avg_profil_pendapatan, use_container_width=True)
-# right_column_chart_row1.plotly_chart(fig_avg_profil_aset, use_container_width=True)
+left_column_chart_row1, right_column_chart_row1 = st.columns(2)
+left_column_chart_row1.plotly_chart(fig_avg_profil_pendapatan, use_container_width=True)
+right_column_chart_row1.plotly_chart(fig_avg_profil_aset, use_container_width=True)
 
 # left_column_chart_row2, right_column_chart_row2 = st.columns(2)
 # left_column_chart_row2.plotly_chart(fig_pie_max_profit, use_container_width=True)
