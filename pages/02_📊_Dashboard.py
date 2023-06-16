@@ -144,42 +144,42 @@ fig_prop_jenis_invest.update_layout(
 )
 
 # # GRAFIK BAR PLOT - PROPORSI JUMLAH PROFIL RISIKO INVESTASI
-# prop_jenis_profil = df['Apa tingkat Profil Resiko investasi anda?'].value_counts()
-# prop_jenis_profil = pd.DataFrame(prop_jenis_profil).sort_values(by='Apa tingkat Profil Resiko investasi anda?',
-#                                                         ascending=False)
+prop_jenis_profil = df['Apa tingkat Profil Resiko investasi anda?'].value_counts()
+prop_jenis_profil = pd.DataFrame(prop_jenis_profil).sort_values(by='Apa tingkat Profil Resiko investasi anda?',
+                                                        ascending=False)
 
-# fig_prop_jenis_profil = px.bar(prop_jenis_profil,
-#                                x=prop_jenis_profil.index,
-#                                y="Apa tingkat Profil Resiko investasi anda?",
-#                                title="<b>Perbandingan Jumlah Profil Risiko Investasi</b>",
-#                                labels={"index": "Profil Risiko Investasi",
-#                                        "Apa tingkat Profil Resiko investasi anda?":"Jumlah"},
-#                                color_discrete_sequence=["#0083B8"] * len(prop_jenis_profil),
-#                                template="plotly_white",
-# )
-# fig_prop_jenis_profil.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)",
-#     xaxis=(dict(showgrid=False))
-# )
+fig_prop_jenis_profil = px.bar(prop_jenis_profil,
+                               x=prop_jenis_profil.index,
+                               y=prop_jenis_profil['count',
+                               title="<b>Perbandingan Jumlah Profil Risiko Investasi</b>",
+                               labels={"index": "Profil Risiko Investasi",
+                                       "count":"Jumlah"},
+                               color_discrete_sequence=["#0083B8"] * len(prop_jenis_profil),
+                               template="plotly_white",
+)
+fig_prop_jenis_profil.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False))
+)
 
-# # GRAFIK BAR PLOT - PROPORSI PERILAKU INVESTOR SAAT HARGA TURUN
-# prop_harga_turun = df['Apa yang Anda lakukan ketika harga turun?'].value_counts()
-# prop_harga_turun = pd.DataFrame(prop_harga_turun).sort_values(by='Apa yang Anda lakukan ketika harga turun?',
-#                                                         ascending=False)
+# GRAFIK BAR PLOT - PROPORSI PERILAKU INVESTOR SAAT HARGA TURUN
+prop_harga_turun = df['Apa yang Anda lakukan ketika harga turun?'].value_counts()
+prop_harga_turun = pd.DataFrame(prop_harga_turun).sort_values(by='Apa yang Anda lakukan ketika harga turun?',
+                                                        ascending=False)
 
-# fig_prop_harga_turun = px.bar(prop_harga_turun,
-#                               x=prop_harga_turun.index,
-#                               y="Apa yang Anda lakukan ketika harga turun?",
-#                               title="<b>Perbandingan Perilaku Investor<br>Saat Harga Turun</b>",
-#                               labels={"index": "Jenis Perilaku",
-#                                       "Apa yang Anda lakukan ketika harga turun?":"Jumlah"},
-#                               color_discrete_sequence=["#0083B8"] * len(prop_harga_turun),
-#                               template="plotly_white",
-# )
-# fig_prop_harga_turun.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)",
-#     xaxis=(dict(showgrid=False))
-# )
+fig_prop_harga_turun = px.bar(prop_harga_turun,
+                              x=prop_harga_turun.index,
+                              y=prop_harga_turun['count'],
+                              title="<b>Perbandingan Perilaku Investor<br>Saat Harga Turun</b>",
+                              labels={"index": "Jenis Perilaku",
+                                      "count":"Jumlah"},
+                              color_discrete_sequence=["#0083B8"] * len(prop_harga_turun),
+                              template="plotly_white",
+)
+fig_prop_harga_turun.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False))
+)
 
 # # GRAFIK SCATTER PLOT - HUBUNGAN PENDAPATAN DENGAN ASET
 # fig_scatter_pendapatan_aset = px.scatter(df,
@@ -204,10 +204,10 @@ left_column_chart_row2, right_column_chart_row2 = st.columns(2)
 left_column_chart_row2.plotly_chart(fig_pie_max_profit, use_container_width=True)
 right_column_chart_row2.plotly_chart(fig_pie_min_loss, use_container_width=True)
 
-# left_column_chart_row3, mid_column_chart_row3, right_column_chart_row3 = st.columns(3)
-# left_column_chart_row3.plotly_chart(fig_prop_jenis_invest, use_container_width=True)
-# mid_column_chart_row3.plotly_chart(fig_prop_harga_turun, use_container_width=True)
-# right_column_chart_row3.plotly_chart(fig_prop_jenis_profil, use_container_width=True)
+left_column_chart_row3, mid_column_chart_row3, right_column_chart_row3 = st.columns(3)
+left_column_chart_row3.plotly_chart(fig_prop_jenis_invest, use_container_width=True)
+mid_column_chart_row3.plotly_chart(fig_prop_harga_turun, use_container_width=True)
+right_column_chart_row3.plotly_chart(fig_prop_jenis_profil, use_container_width=True)
 
 # st.plotly_chart(fig_scatter_pendapatan_aset, use_container_width=True)
 
