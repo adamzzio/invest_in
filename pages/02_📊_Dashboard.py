@@ -100,8 +100,8 @@ fig_avg_profil_aset.update_layout(
 
 # GRAFIK PIE CHART - PROPORSI MAKSIMAL KEUNTUNGAN
 prop_max_profit = df['Apakah anda memaksimalkan keuntungan dalam berinvestasi?'].value_counts()
+prop_max_profit = pd.DataFrame(prop_max_profit)
 st.dataframe(prop_max_profit)
-# prop_max_profit = pd.DataFrame(prop_max_profit)
 
 # fig_pie_max_profit = px.pie(prop_max_profit,
 #                             values="Apakah anda memaksimalkan keuntungan dalam berinvestasi?",
