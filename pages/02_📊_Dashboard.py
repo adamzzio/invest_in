@@ -122,7 +122,7 @@ fig_pie_min_loss = px.pie(prop_min_loss,
                             names=prop_min_loss.index,
                             title="<b>Apakah Anda meminimalkan kerugian<br>dalam berinvestasi?</b>",
                             labels={"Apakah Anda meminimalkan kerugian dalam berinvestasi?":"Perilaku Minimal Kerugian",
-                                "count":"Jumlah"}))
+                                "count":"Jumlah"})
 
 fig_pie_min_loss.update_layout(
     plot_bgcolor="rgba(0,0,0,0)"
