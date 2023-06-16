@@ -61,23 +61,23 @@ with right_column:
 st.markdown("""---""")
 
 # GRAFIK BAR PLOT - RATA-RATA PENDAPATAN BERDASAR PROFIL RISIKO INVESTASI
-# avg_pendapatan_profil= df.groupby('Apa tingkat Profil Resiko investasi anda?')['Berapa jumlah pendapatan dalam sebulan?'].mean()
-# avg_pendapatan_profil = pd.DataFrame(avg_pendapatan_profil).sort_values(by='Berapa jumlah pendapatan dalam sebulan?',
-#                                                                         ascending=False)
+avg_pendapatan_profil= df.groupby('Apa tingkat Profil Resiko investasi anda?')['Berapa jumlah pendapatan dalam sebulan?'].mean()
+avg_pendapatan_profil = pd.DataFrame(avg_pendapatan_profil).sort_values(by='Berapa jumlah pendapatan dalam sebulan?',
+                                                                        ascending=False)
 
-# fig_avg_profil_pendapatan = px.bar(avg_pendapatan_profil,
-#                                    x=avg_pendapatan_profil.index,
-#                                    y="Berapa jumlah pendapatan dalam sebulan?",
-#                                    title="<b>Rata-rata Pendapatan berdasarkan<br>Profil Risiko Investasi</b>",
-#                                    labels={"Apa tingkat Profil Resiko investasi anda?": "Profil Risiko",
-#                                            "Berapa jumlah pendapatan dalam sebulan?": "Rata-rata Pendapatan"},
-#                                    color_discrete_sequence=["#0083B8"] * len(avg_pendapatan_profil),
-#                                    template="plotly_white",
-# )
-# fig_avg_profil_pendapatan.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)",
-#     xaxis=(dict(showgrid=False))
-# )
+fig_avg_profil_pendapatan = px.bar(avg_pendapatan_profil,
+                                   x=avg_pendapatan_profil.index,
+                                   y="Berapa jumlah pendapatan dalam sebulan?",
+                                   title="<b>Rata-rata Pendapatan berdasarkan<br>Profil Risiko Investasi</b>",
+                                   labels={"Apa tingkat Profil Resiko investasi anda?": "Profil Risiko",
+                                           "Berapa jumlah pendapatan dalam sebulan?": "Rata-rata Pendapatan"},
+                                   color_discrete_sequence=["#0083B8"] * len(avg_pendapatan_profil),
+                                   template="plotly_white",
+)
+fig_avg_profil_pendapatan.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)",
+    xaxis=(dict(showgrid=False))
+)
 
 # # GRAFIK BAR PLOT - RATA-RATA ASET BERDASAR PROFIL RISIKO INVESTASI
 # avg_pendapatan_aset= df.groupby('Apa tingkat Profil Resiko investasi anda?')['Berapa aset yang anda miliki sekarang?'].mean()
