@@ -101,7 +101,6 @@ fig_avg_profil_aset.update_layout(
 # GRAFIK PIE CHART - PROPORSI MAKSIMAL KEUNTUNGAN
 prop_max_profit = df['Apakah anda memaksimalkan keuntungan dalam berinvestasi?'].value_counts()
 prop_max_profit = pd.DataFrame(prop_max_profit)
-st.dataframe(prop_max_profit)
 
 fig_pie_max_profit = px.pie(prop_max_profit,
                             values="count",
@@ -113,17 +112,17 @@ fig_pie_max_profit.update_layout(
 )
 
 # GRAFIK PIE CHART - PROPORSI MINIMAL KERUGIAN
-# prop_min_loss = df['Apakah Anda meminimalkan kerugian dalam berinvestasi?'].value_counts()
-# prop_min_loss = pd.DataFrame(prop_min_loss)
+prop_min_loss = df['Apakah Anda meminimalkan kerugian dalam berinvestasi?'].value_counts()
+prop_min_loss = pd.DataFrame(prop_min_loss)
 
-# fig_pie_min_loss = px.pie(prop_min_loss,
-#                             values="Apakah Anda meminimalkan kerugian dalam berinvestasi?",
-#                             names=prop_min_loss.index,
-#                             title="<b>Apakah Anda meminimalkan kerugian<br>dalam berinvestasi?</b>")
+fig_pie_min_loss = px.pie(prop_min_loss,
+                            values="count",
+                            names=prop_min_loss.index,
+                            title="<b>Apakah Anda meminimalkan kerugian<br>dalam berinvestasi?</b>")
 
-# fig_pie_min_loss.update_layout(
-#     plot_bgcolor="rgba(0,0,0,0)"
-# )
+fig_pie_min_loss.update_layout(
+    plot_bgcolor="rgba(0,0,0,0)"
+)
 
 # GRAFIK BAR PLOT - PROPORSI JUMLAH JENIS INVESTASI
 # prop_jenis_invest = df['Sebutkan jenis investasi yang Anda lakukan!'].value_counts()
@@ -201,9 +200,9 @@ left_column_chart_row1, right_column_chart_row1 = st.columns(2)
 left_column_chart_row1.plotly_chart(fig_avg_profil_pendapatan, use_container_width=True)
 right_column_chart_row1.plotly_chart(fig_avg_profil_aset, use_container_width=True)
 
-# left_column_chart_row2, right_column_chart_row2 = st.columns(2)
-# left_column_chart_row2.plotly_chart(fig_pie_max_profit, use_container_width=True)
-# right_column_chart_row2.plotly_chart(fig_pie_min_loss, use_container_width=True)
+left_column_chart_row2, right_column_chart_row2 = st.columns(2)
+left_column_chart_row2.plotly_chart(fig_pie_max_profit, use_container_width=True)
+right_column_chart_row2.plotly_chart(fig_pie_min_loss, use_container_width=True)
 
 # left_column_chart_row3, mid_column_chart_row3, right_column_chart_row3 = st.columns(3)
 # left_column_chart_row3.plotly_chart(fig_prop_jenis_invest, use_container_width=True)
