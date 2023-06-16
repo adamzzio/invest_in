@@ -125,9 +125,10 @@ fig_pie_min_loss.update_layout(
 )
 
 # GRAFIK BAR PLOT - PROPORSI JUMLAH JENIS INVESTASI
-# prop_jenis_invest = df['Sebutkan jenis investasi yang Anda lakukan!'].value_counts()
-# prop_jenis_invest = pd.DataFrame(prop_jenis_invest).sort_values(by='Sebutkan jenis investasi yang Anda lakukan!',
-#                                                         ascending=False)
+prop_jenis_invest = df['Sebutkan jenis investasi yang Anda lakukan!'].value_counts()
+prop_jenis_invest = pd.DataFrame(prop_jenis_invest).sort_values(by='Sebutkan jenis investasi yang Anda lakukan!',
+                                                        ascending=False)
+st.dataframe(prop_jenis_invest)
 
 # fig_prop_jenis_invest = px.bar(prop_jenis_invest,
 #                                x=prop_jenis_invest.index,
