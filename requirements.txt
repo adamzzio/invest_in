@@ -1,18 +1,18 @@
-altair==5.2.0          # Updated to a version compatible with Python 3.13
-beautifulsoup4==4.12.0  # Newer version to keep it up-to-date
-matplotlib==3.9.0      # Updated to be compatible with Python 3.13
-matplotlib-inline==0.1.7 # Compatible with the newer matplotlib
-numpy==2.0.0           # Updated to the latest compatible version (no distutils)
-openpyxl==3.0.10       # No change, already compatible
-pandas==2.0.0          # Updated to be compatible with Python 3.13
-pickleshare==0.7.5     # No change, already compatible
-Pillow==9.5.0          # Latest stable version compatible with Python 3.13
-plotly==5.8.2          # No change, compatible
-requests==2.28.0       # No change, compatible
-scikit-learn==1.1.3    # Updated for better compatibility
-scipy==1.9.3           # Updated to be compatible with Python 3.13
-sklearn==0.0           # No change, already compatible
-streamlit==1.14.0      # Updated to latest stable version compatible with 3.13
+altair==5.2.0           # Updated to support Python 3.13
+beautifulsoup4==4.12.0   # Updated for compatibility
+matplotlib==3.9.0       # Updated to support Python 3.13
+matplotlib-inline==0.1.7 # Compatible with newer matplotlib
+numpy==2.0.0            # Latest version compatible with Python 3.13 (avoids distutils issue)
+openpyxl==3.0.10        # No change, compatible
+pandas==2.0.0           # Updated for compatibility with Python 3.13
+pickleshare==0.7.5      # No change, compatible
+Pillow==9.5.0           # Latest stable version
+plotly==5.8.2           # No change, compatible
+requests==2.28.0        # No change, compatible
+scikit-learn==1.1.3     # Updated to be compatible with Python 3.13
+scipy==1.9.3            # Updated to support Python 3.13
+sklearn==0.0            # No change, compatible
+streamlit==1.14.0       # Updated for compatibility
 streamlit-lottie==0.0.3 # No change, compatible
-tinycss2==1.1.1        # No change, compatible
-toml==0.10.2           # No change, compatible
+tinycss2==1.1.1         # No change, compatible
+toml==0.10.2            # No change, compatible
