@@ -1,7 +1,6 @@
 altair==5.2.0           # Updated to support Python 3.13
 beautifulsoup4==4.12.0   # Updated for compatibility
-matplotlib==3.9.0       # Updated to support Python 3.13
-matplotlib-inline==0.1.7 # Compatible with newer matplotlib
+matplotlib==3.10.0
 numpy==2.0.0            # Latest version compatible with Python 3.13 (avoids distutils issue)
 openpyxl==3.0.10        # No change, compatible
 pandas==2.0.0           # Updated for compatibility with Python 3.13
